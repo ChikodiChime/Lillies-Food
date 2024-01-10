@@ -5,16 +5,34 @@ import { LoginContainer, LoginLink } from './Style';
 import Logo from 'src/icons/svg/Logo';
 import { NavLink } from './Style';
 import axios from 'axios';
-const LoginComponent = () => {
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
+const LoginComponent = () => {
+const navigate = useNavigate()
   const [data, setData] = useState({
     email: '',
     password:'',
   })
 
-const loginUser = (e) => {
+const loginUser = async(e) => {
   e.preventDefault()
-  axios.get('')
+  const {email, password} = data
+  try {
+    const {data} = await axios.post('/login', {
+      email,
+      password
+    });
+    if(data.error){
+      toast.error(data.error)
+    }
+    else{
+      setData({}) 
+      navigate('/')
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
   return (

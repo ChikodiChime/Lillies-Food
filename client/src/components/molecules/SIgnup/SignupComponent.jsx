@@ -3,14 +3,34 @@ import Button from 'src/components/atoms/Button';
 import signup1 from 'src/icons/img/signup1.png';
 import { LoginContainer, LoginLink, NavLink } from './Style';
 import Logo from 'src/icons/svg/Logo';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 const SignupComponent = () => {
+  const navigate = useNavigate()
 const [data, setData] = useState({
   name: '',
   email: '',
   password: '',
 })
-const registerUser = (e) => {
-  e.preventDefault()
+const registerUser = async(e) => {
+  e.preventDefault();
+  const {name, email, password} = data
+  try {
+    const {data} = await axios.post('/register', {
+      name, email, password
+    })
+    if (data.error){
+      toast.error(data.error)
+    }else{
+      setData({})
+      toast.success('Login Successful. Welcome')
+      navigate('/login')
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 
