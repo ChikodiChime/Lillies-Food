@@ -28,7 +28,7 @@ const loginUser = async(e) => {
     }
     else{
       setData({}) 
-      navigate('/')
+      navigate('/Dashboard')
     }
   } catch (error) {
     console.log(error)
