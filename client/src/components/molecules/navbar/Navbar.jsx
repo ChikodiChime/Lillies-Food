@@ -1,25 +1,27 @@
-// import { ReactComponent as DPIconLogo } from 'src/icons/svg/logo.svg';
-// import { ReactComponent as DPIconLogo } from 'src/components/molecules/navbar/logo.svg';
+
 import Logo from 'src/icons/svg/Logo';
 
-import { Nav, NavLink } from './Style';
+import { NavLink } from './Style';
 
 const Navbar = () => {
   return (
-    <Nav>
-        <div className="nav-wrapper space-between">
-            <div className="logo-wrapper flex-centre">
+    <nav className='w-full h-[100px] py-[40px] px-20'>
+        <div className="h-full w-full text-sm flex justify-between items-center ">
+            <div className=" flex items-center justify-center">
                 < Logo />
-                <span>Lilies</span>
+                <span className=' text-white text-2xl font-bold pl-3'>Lilies</span>
             </div>
-            <div className="link-wrapper space-between">
+            <div className=" flex justify-center gap-32 text-lg items-center">
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/About'>About</NavLink>
+                <NavLink to='/Recipes'>Recipes</NavLink>
+                <NavLink to='/Gallery'>Gallery</NavLink>
+                <NavLink to='/Contact'>Contact</NavLink>
                 <NavLink to='/Login'>Login</NavLink>
                 <NavLink to='/Signup'>Signup</NavLink>
             </div>
         </div>
-    </Nav>
+    </nav>
   )
 }
 

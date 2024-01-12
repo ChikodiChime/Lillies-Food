@@ -37,6 +37,25 @@ export const Nav = styled.nav`
         color: ${COLORS.white};
         text-decoration: none;
         font-weight: ${FONTWEIGHTS.medium};
+        position:relative;
+       
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            border-radius: 5px;
+            height: 0.2em;
+            bottom: -2px;
+            left: 0;
+            background: ${COLORS.Nude};
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
 
         &:last-child{
             color: ${COLORS.green};
