@@ -4,8 +4,8 @@ import { FONTSIZES, FONTWEIGHTS } from '../../../constants/fonts';
 
 export const HeroWrapper = styled.div`
     width: 100%;
-    height: calc(100vh - 100px);
-    padding: 50px 100px;
+    // height: calc(100vh + 100px);
+    padding: 150px 100px;
 
     .hero{
         .hero-left{
