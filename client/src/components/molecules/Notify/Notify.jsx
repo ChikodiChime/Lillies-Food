@@ -1,22 +1,22 @@
-import React from 'react'
-import { NotifyWrapper } from './Style'
+
+
 
 const Notify = () => {
   return (
-    <NotifyWrapper>
+    <div className="my-[150px] px-[100px] text-black">
         <div className='space-between'>
-            <div className="NotifyLeft">
-                <h1>Get Notified When We Update!</h1>
-                <p>Get notified when we add new items to our specials menu, 
+            <div className="w-1/2">
+                <h1 className="text-[5rem] font-extrabold">Get Notified When We Update!</h1>
+                <p className="text-lg font-medium">Get notified when we add new items to our specials menu, 
                     update our price list or have promos!</p>
             </div>
-            <div className="NotifyRight">
+            <div className="NotifyRight w-[40%]">
 
-                <input type="text" placeholder='chikkychime@gmail.com' />
-                <input type="button" value="Get Notified" />
+                <input type="text" placeholder='chikkychime@gmail.com' className="h-[40px] w-[70%] p-3 mr-2 outline-none text-lg border border-red-600 " />
+                <input type="button" value="Get Notified" className="h-[40px] bg-red-600 outline-none border-none p-5 text-white text-lg" />
             </div>
         </div>
-    </NotifyWrapper>
+    </div>
   )
 }
 

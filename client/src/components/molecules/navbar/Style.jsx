@@ -48,7 +48,7 @@ export const Nav = styled.nav`
             height: 0.2em;
             bottom: -2px;
             left: 0;
-            background: ${COLORS.Nude};
+            background: rgb(220 38 38);
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
         }
@@ -58,10 +58,9 @@ export const Nav = styled.nav`
           }
 
         &:last-child{
-            color: ${COLORS.green};
-            background: ${COLORS.Nude};
-            padding: 7px 20px;
-            border-radius: 10px;
+            color: white;
+            background: rgb(220 38 38);;
+            padding: 10px 30px;
             font-weight: ${FONTWEIGHTS.bold};
             margin-left: 100px;
 

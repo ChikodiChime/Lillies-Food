@@ -25,7 +25,34 @@ code {
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
+
+/* global.css*/
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #2c2b2b;
+	border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(220, 38, 38);
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(230, 116, 116);
+}
+
 li{
   list-style: none;
   
@@ -50,4 +77,7 @@ li{
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: rgb(150, 10, 10);
   opacity: 1;
+}
+.grad{
+  background-image: (to right, rgb(239, 68, 68), rgb(153, 27, 27))
 }

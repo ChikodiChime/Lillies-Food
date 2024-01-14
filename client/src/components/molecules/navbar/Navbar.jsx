@@ -1,5 +1,5 @@
 
-import Logo from 'src/icons/svg/Logo';
+import Logo from '../../../icons/img/logo.png';
 
 import { NavLink } from './Style';
 
@@ -8,8 +8,7 @@ const Navbar = () => {
     <nav className='w-full h-[70px] py-[40px] px-20 fixed z-50 bg-black/80 backdrop-blur-lg'>
         <div className="h-full w-full text-sm flex justify-between items-center ">
             <div className=" flex items-center justify-center">
-                < Logo />
-                <span className=' text-white text-2xl font-bold pl-3'>Lilies</span>
+                <img src={Logo} alt="" className='object-cover w-[100px]' />
             </div>
             <div className=" flex justify-center gap-32 text-lg items-center">
                 <NavLink to='/'>Home</NavLink>
