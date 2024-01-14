@@ -47,3 +47,7 @@ li{
   align-items: center;
   justify-content: space-around;
 }
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgb(150, 10, 10);
+  opacity: 1;
+}

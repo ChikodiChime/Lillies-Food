@@ -5,7 +5,7 @@ import { NavLink } from './Style';
 
 const Navbar = () => {
   return (
-    <nav className='w-full h-[70px] py-[40px] px-20 fixed bg-black/80 backdrop-blur-lg'>
+    <nav className='w-full h-[70px] py-[40px] px-20 fixed z-50 bg-black/80 backdrop-blur-lg'>
         <div className="h-full w-full text-sm flex justify-between items-center ">
             <div className=" flex items-center justify-center">
                 < Logo />
