@@ -1,9 +1,8 @@
 import { MoD } from 'src/utilities/MoD';
-import { MoDContainer } from './Style';
 
 const Meals = () => {
   return (
-    <MoDContainer>
+    <div className=''>
       <h1>Special Meals of the Day</h1>
       <p className='about'>Check our specials of the day and get discounts on all our Meals
           and swift delivery to whatever location within Enugu.</p>
@@ -23,7 +22,7 @@ const Meals = () => {
           ))
         ))}
       </div>
-    </MoDContainer>
+    </div>
   );
 };
 

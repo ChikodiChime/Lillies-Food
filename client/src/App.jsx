@@ -5,7 +5,7 @@ import About from 'src/pages/About';
 import Login from 'src/pages/Login';
 import Signup from 'src/pages/Signup';
 import Dashboard from './pages/Dashboard';
-import Gallery from './pages/Gallery;'
+import Gallery from './pages/Gallery';
 import Recipes from './pages/Recipes';
 import Contact from './pages/Contact';
 import axios from 'axios';

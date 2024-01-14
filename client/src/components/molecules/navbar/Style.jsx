@@ -62,7 +62,13 @@ export const Nav = styled.nav`
             background: ${COLORS.Nude};
             padding: 7px 20px;
             border-radius: 10px;
-            font-weight: ${FONTWEIGHTS.bold}
-            
+            font-weight: ${FONTWEIGHTS.bold};
+            margin-left: 100px;
+
+
+            &::after{
+                width: 0
+            }
+           
         }
     `

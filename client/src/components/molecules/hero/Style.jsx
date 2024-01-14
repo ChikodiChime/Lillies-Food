@@ -4,10 +4,12 @@ import { FONTSIZES, FONTWEIGHTS } from '../../../constants/fonts';
 
 export const HeroWrapper = styled.div`
     width: 100%;
-    // height: calc(100vh + 100px);
+    height: calc(100vh + 100px);
     padding: 150px 100px;
 
     .hero{
+    background-image: url('../../../icons/img/hero-bg.jpg');
+
         .hero-left{
             width: 40%;
             color: ${COLORS.white};
