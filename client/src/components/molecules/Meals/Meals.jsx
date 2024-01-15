@@ -1,12 +1,21 @@
 import { MoD } from 'src/utilities/MoD';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
-const Meals = () => {
+const Meals = () => { 
+   useEffect(() => {
+    Aos.init({duration: 2000})
+  }, [])
   return (
-    <div className='w-full bg-black py-[100px] flex flex-col items-center justify-center text-white'>
-      <h1 className=' text-[4rem] text-red-600 font-bold'>Special Meals of the Day</h1>
-      <p className='text-lg w-1/2 text-center font-light pb-[30px]'>Check our specials of the day and get discounts on all our Meals
-          and swift delivery to whatever location within Enugu.</p>
-      <div className="text-center space-between px-52">
+    <div className='w-full bg-black py-[100px] flex flex-col items-center justify-center text-white' >
+      <div className="flex flex-col items-center justify-center" data-aos = 'fade-down'>
+        <h1 className=' text-[4rem] text-red-600 font-bold' >Special Meals of the Day</h1>
+        <p className='text-lg text-center font-light pb-[30px]' >Check our specials of the day and get discounts on all our Meals
+            and swift delivery to whatever location within Enugu.</p>
+      </div>
+      
+      <div className="text-center space-between px-52" data-aos = 'fade-up'>
         {MoD.map((MealsData) => (
           MealsData.Meals?.map((meal, mealIndex) => (
             <div className=' w-[20%] ' key={mealIndex}>
