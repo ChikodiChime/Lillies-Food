@@ -16,9 +16,15 @@ const Review = () => {
         320: {
           slidesPerView: 1,
         },
-        
-        768: {
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 50
+  
+          },
+        820: {
           slidesPerView: 3,
+          spaceBetween: 50
+
         }
       };
     useEffect(() => {
@@ -26,7 +32,7 @@ const Review = () => {
       }, [])
   return (
     <>
-        <div className=" bg-white w-full h-[100vh] p-10 sm:p-40  ">
+        <div className=" bg-white w-full h-[100vh] py-40  px-20  lg:px-40   ">
             <div className="text-center w-[100%] flex flex-col justify-center items-center"  data-aos = 'fade-down'>
                 <h1 className="text-red-600 font-extrabold text-[4rem]">What Customers Say</h1>
                 <p className="text-lg w-[70%] text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesciunt suscipit fugit voluptatibus ea est architecto a quam.</p>
@@ -34,8 +40,7 @@ const Review = () => {
             <div className="cards mt-20" data-aos = 'fade-right'>
                 <div className=" w-full text-justify   text-black">
                 <Swiper
-                    className=" max-w-[90%] lg:max-w-[80%] "
-                    spaceBetween={50}
+                    className=" max-w-[100%] xl:max-w-[80%] "
                     // slidesPerView={3}
                     freeMode={true}
                     pagination={{
@@ -48,7 +53,7 @@ const Review = () => {
                     ReviewData.Review?.map((review, reviewIndex) => (
                         <div className="" key={reviewIndex}>
                         <SwiperSlide className="">
-                            <div className=' shadow-lg p-10 w-[300px] mb-20 cursor-pointer rounded-lg  ' >
+                            <div className=' shadow-lg p-10  mb-20 cursor-pointer rounded-lg  ' >
                                 <div className="flex gap-3 items-center ">
                                     <img
                                         src={`src/icons/img/${review.img}.jpeg`}  // Use template literals for dynamic import paths
