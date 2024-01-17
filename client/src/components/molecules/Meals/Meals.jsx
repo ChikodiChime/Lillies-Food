@@ -15,7 +15,7 @@ const Meals = () => {
             and swift delivery to whatever location within Enugu.</p>
       </div>
       
-      <div className="text-center flex justify-center items-center flex-col sm:flex-row gap-8 px-52" data-aos = 'fade-up'>
+      <div className="text-center flex justify-center items-center flex-col sm:flex-row gap-8 sm:px-52" data-aos = 'fade-up'>
         {MoD.map((MealsData) => (
           MealsData.Meals?.map((meal, mealIndex) => (
             <div className=' w-[35%] sm:w-[25%]  ' key={mealIndex}>
