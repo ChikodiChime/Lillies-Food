@@ -37,7 +37,7 @@ const Hero = () => {
           </div>   
         </div>
       </div>
-      <div className="w-full py-40 flex flex-col justify-center items-center sm:flex-row" >
+      <div className="w-full py-40 sm:pb-0 flex flex-col justify-center items-center sm:flex-row" >
         <img className='w-full sm:w-1/2 object-contain' src={bg1} alt="" />
         <div className="text-black leading-loose text-xl px-20 md:pr-40   w-full sm:w-1/2 h-full flex flex-col justify-center " data-aos = 'fade-right'>
           <h1 className='text-red-600 leading-[50px] text-[6rem] font-extrabold'>The Taste ...</h1>
