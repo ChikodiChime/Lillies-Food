@@ -1,9 +1,12 @@
+import Structure from "src/components/layout/Structure"
 import SignupComponent from "src/components/molecules/SIgnup/SignupComponent"
 
 
 const Signup = () => {
   return (
-    <SignupComponent/>
+    <Structure>
+      <SignupComponent/>
+    </Structure>
   )
 }
 

@@ -82,3 +82,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .grad{
   background-image: (to right, rgb(239, 68, 68), rgb(153, 27, 27))
 }
+
+.gridSpan{
+  grid-column: 1 / -1;
+}

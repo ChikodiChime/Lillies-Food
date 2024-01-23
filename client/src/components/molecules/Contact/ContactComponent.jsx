@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import { FaEnvelope, FaHome, FaInstagram } from 'react-icons/fa'
 import { FaPhone } from 'react-icons/fa'
 import { IconContext } from 'react-icons';
+import Button from 'src/components/atoms/Button';
 
 const ContactComponent = () => {
   useEffect(() => {
@@ -29,15 +30,15 @@ const ContactComponent = () => {
           <h1 className='font-extrabold text-[5rem] text-center z-10'>CONTACT US</h1>
         </div>
       </div>
-      <div className="text-black p-40 text-lg">
+      <div className="text-black p-20 md:p-52 text-lg w-full">
         <div className="text-center flex flex-col w-full items-center gap-10">
-            <h1 className='font-extrabold text-[4rem]'>How can I help you?</h1>
-            <p className='text-lg w-1/2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit fuga reiciendis voluptates? Dolor, non facilis alias eos ad facere.</p>
-            <div className=" flex items-center justify-center">
+            <h1 className='font-extrabold text-[4rem] leading-normal'>How can I help you?</h1>
+            <p className='text-lg w-[70%] md:w-1/2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit fuga reiciendis voluptates? Dolor, non facilis alias eos ad facere.</p>
+            <div className=" flex w-full gap-7 flex-col-reverse sm:flex-row items-center justify-between">
                 <div className="col1">
-                    <p className='w-3/4 text-left pb-6'>Lillies Food is a registered tradedmark of Nigerian Company LTD.</p>
+                    <p className=' w-full  text-center  sm:text-left pb-6'>Lillies Food is a registered tradedmark of Nigerian Company LTD.</p>
                     <IconContext.Provider value={{  className: "text-white text-2xl bg-red-600 w-[40px] h-[40px] p-4 rounded-full " }}>
-                      <div className="flex flex-col gap-10 font-bold">
+                      <div className="flex flex-col gap-10 font-bold w-full items-center">
                       <div className="flex items-center gap-4 ">
                           <FaHome/>
                           <p>Block F Iji Road</p>
@@ -59,27 +60,30 @@ const ContactComponent = () => {
                     </IconContext.Provider>;
                     
                 </div>
-                <div className="">
-              <form action="" method="post" className='grid grid-cols-2 gap-4'>
+            <div className="w-full text-left">
+              <form action="" method="post" className='grid grid-cols-2 gap-9 '>
                 <div>
-                  <label htmlFor="Firstname">Firstname</label><br />
-                  <input type="text" name="" className='border w-full h-[40px]' id="Firstname"  />
+                  <label className='font-semibold leading-loose' htmlFor="Firstname">Firstname</label><br />
+                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Firstname"  />
                 </div>
                 <div>
-                  <label htmlFor="Lastname">Lastname</label><br />
-                  <input type="text" name="" className='border w-full h-[40px]' id="Lastname" />
+                  <label className='font-semibold leading-loose' htmlFor="Lastname">Lastname</label><br />
+                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Lastname" />
                 </div>
                 <div>
-                  <label htmlFor="Subject">Subject</label><br />
-                  <input type="text" name="" className='border w-full h-[40px]' id="Subject" />
+                  <label className='font-semibold leading-loose' htmlFor="Subject">Subject</label><br />
+                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Subject" />
                 </div>
                 <div>
-                  <label htmlFor="InquiryType">Inquiry Type</label><br />
-                  <input type="text" name="" className='border w-full h-[40px]' id="InquiryType" />
+                  <label className='font-semibold leading-loose' htmlFor="InquiryType">Inquiry Type</label><br />
+                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="InquiryType" />
                 </div>
-                <div>
-                  <label htmlFor="">Your Message</label><br />
-                  <textarea name="" className='border' id="" cols="30" rows="10"></textarea>
+                <div className='gridSpan'>
+                  <label className='font-semibold leading-loose' htmlFor="">Your Message</label><br />
+                  <textarea name="" className='border w-full bg-slate-200 opacity-25'  id="" cols="" rows="10"></textarea>
+                </div>
+                <div className='w-full'>
+                  <Button text={'Send Message'}/>
                 </div>
               </form>
             </div>

@@ -1,13 +1,22 @@
 import { useState } from 'react';
 import Button from 'src/components/atoms/Button';
-import signup1 from 'src/icons/img/signup1.png';
-import { LoginContainer, LoginLink, NavLink } from './Style';
-import Logo from 'src/icons/svg/Logo';
+import heroBg1 from '../../../icons/img/hero-bg.jpg'
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignupComponent = () => {
+
+  const heroBg ={
+    backgroundImage :`url(${heroBg1})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'right',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh',
+    width: '100%',
+  }
+
+
   const navigate = useNavigate()
 const [data, setData] = useState({
   name: '',
@@ -35,39 +44,33 @@ const registerUser = async(e) => {
 
 
   return (
-    <LoginContainer>
-
-       <NavLink to={'/'}>
-          < Logo />
-          <span>Lilies</span>
-        </NavLink>
-
-      <div className="wrapper space-between">
-        <div className="loginLeft">
-          <img src={signup1} alt="" />
-        </div>
-
-        <div className="loginRight">
+    <>
+      <div style={heroBg} className=' relative w-full h-[100vh]'>
+        <div className="absolute z-0 inset-0 bg-gradient-to-t from-transparent to-black"></div>
+        <div className=" h-[100vh] w-full absolute  flex items-center justify-center ">
+     
+        <div className="loginRight p-20 bg-black/70 backdrop-blur-sm">
        
-            <form action="" onSubmit={registerUser}>
-                <h1>Welcome to Lilies!</h1>
-                <input type="text" placeholder='Your FullName' value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
-                <input type="email" placeholder='Your Email Address' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-                <input type="password" placeholder='Your Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
+            <form className='flex flex-col' action="" onSubmit={registerUser}>
+                <h1 className=' text-4xl font-bold text-red-600 mb-5 text-center' >Welcome to Lilies!</h1>
+                <input type="text"  className='w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your FullName' value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
+                <input type="email"  className='w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Email Address' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+                <input type="password" className='w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
                 <Button 
                 text= "SIGN UP"
                 />
             </form>
 
-            <div className="bottom space-around">
+            <div className="bottom flex justify-between mt-5 w-full">
                 <span>Already have an account? 
-                  <LoginLink to={'/Login'}> Login</LoginLink>
+                  <Link className= 'text-red-600 cursor-pointer' to={'/Login'}> Login</Link>
                 </span>
                
             </div>
+            </div>
         </div>
       </div>
-    </LoginContainer>
+    </>
   )
 }
 

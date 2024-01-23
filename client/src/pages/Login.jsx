@@ -1,9 +1,13 @@
+import Structure from "src/components/layout/Structure"
 import LoginComponent from "src/components/molecules/Login/LoginComponent"
 
 
 const Login = () => {
   return (
-    <LoginComponent/>
+    <Structure>
+      <LoginComponent/>
+    </Structure>
+    
   )
 }
 

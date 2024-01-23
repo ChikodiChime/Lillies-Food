@@ -27,7 +27,7 @@ const Hero = () => {
 
         <div className=' h-full flex items-center justify-center pl-0 sm:justify-start sm:pl-40 ' data-aos = 'fade-right'>
           <div className="w-[60%] xl:w-[50%] text-white text-center sm:text-left">
-              <h1 className=' text-[7rem] leading-[70px] font-extrabold'>Order <span className='text-red-600'>food</span> anywhere, anytime</h1>
+              <h1 className=' text-[7rem] leading-tight font-extrabold'>Order <span className='text-red-600'>food</span> anywhere, anytime</h1>
               <p className=' text-lg font-light'>Browse from our list of specials to place your order and have food 
                   delivered to you in no time. Affordable, tasty and fast... </p>
               <div className='flex gap-6 py-6'>

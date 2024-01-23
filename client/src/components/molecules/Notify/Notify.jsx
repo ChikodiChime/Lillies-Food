@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import Button from 'src/components/atoms/Button';
 
 const Notify = () => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const Notify = () => {
             <div className="NotifyRight text-center w-full sm:w-[50%]">
 
                 <input type="text" placeholder='chikkychime@gmail.com' className="h-[40px] w-[70%] p-3 mr-2 outline-none text-lg border border-red-600 " />
-                <input type="button" value="Get Notified" className="h-[40px] bg-red-600 outline-none border-none p-5 text-white text-lg" />
+                <Button text={'Get Notified'} />
             </div>
         </div>
     </div>
