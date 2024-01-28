@@ -1,4 +1,4 @@
-import heroBg1 from '../../../icons/img/hero-bg.jpg';
+import heroBg1 from '../../../icons/img/herobg1.jpg';
 import play from '../../../icons/img/google-play.png';
 import app from '../../../icons/img/app-store.png';
 import bg1 from '../../../icons/img/chef.png'
@@ -12,17 +12,19 @@ const Hero = () => {
   }, [])
   const heroBg ={
     backgroundImage :`url(${heroBg1})`,
-    backgroundSize: 'contain',
-    backgroundPosition: 'right',
+    backgroundSize: 'cover',
+    // backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
     height: '100vh',
     width: '100%',
 
-  }
+    //Media query for larger screens
  
+}
   return (
     <>
-      <div className='w-full bg-black relative ' style= {heroBg}>
+   
+      <div className='bg w-full bg-black relative  ' style= {heroBg}>
       <div className="absolute z-0 inset-0 bg-gradient-to-t from-transparent to-black"></div>
 
         <div className=' h-full flex items-center justify-center pl-0 sm:justify-start sm:pl-40 ' data-aos = 'fade-right'>

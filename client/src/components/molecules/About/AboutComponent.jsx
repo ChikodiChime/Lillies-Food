@@ -44,7 +44,7 @@ const AboutComponent = () => {
                   pariatur eius. Optio iste, sunt error laudantium ullam aperiam officia perferendis dolore, asperiores 
               officiis magni amet tempore voluptatum ratione sed eveniet non facere et maiores corporis.
             </p>
-            <p data-aos = 'fade-left'>
+            <p data-aos = 'fade-right'>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime debitis animi ipsam autem unde,
                alias exerci voluptates praesentium doloribus nobis neque
                  quis mollitia omnis rerum aspernatur iusto. Sint dolores eveniet sapiente neque deserunt, 
