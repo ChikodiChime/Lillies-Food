@@ -45,15 +45,18 @@ const loginUser = async(e) => {
     <>
     <div style={heroBg} className=' relative w-full h-[100vh]'>
       <div className="absolute z-0 inset-0 bg-gradient-to-t from-transparent to-black"></div>
-      <div className=" h-[100vh] w-full absolute  flex items-center justify-center ">
-        <div className="loginRight p-20 bg-black/70 backdrop-blur-sm">
-          <form action="" className='flex flex-col' onSubmit={loginUser}>
+      <div className=" h-[100vh] w-full flex items-center justify-center ">
+        <div className=" p-20 w-full max-w-[600px] bg-black/70 backdrop-blur-sm ">
+          <form action="" className='flex flex-col justify-center items-center' onSubmit={loginUser}>
               <h1 className=' text-4xl font-bold text-red-600 mb-5 text-center'>Welcome Back!</h1>
-              <input type="email" className='w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Email Address'  value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-              <input type="password" className='w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})}  />
-              <Button 
+              <input type="email" className='w-full max-w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Email Address'  value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+              <input type="password" className='w-full max-w-[400px]  h-[60px] text-black text-lg mb-10 px-5 rounded-md ' placeholder='Your Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})}  />
+              <div className="">
+                <Button 
               text= "LOGIN"
               />
+              </div>
+              
           </form>
 
           <div className="bottom flex justify-between mt-5 w-full">

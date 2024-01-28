@@ -13,7 +13,7 @@ const Hero = () => {
   const heroBg ={
     backgroundImage :`url(${heroBg1})`,
     backgroundSize: 'cover',
-    // backgroundPosition: 'right',
+    backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
     height: '100vh',
     width: '100%',
@@ -25,14 +25,14 @@ const Hero = () => {
     <>
    
       <div className='bg w-full bg-black relative  ' style= {heroBg}>
-      <div className="absolute z-0 inset-0 bg-gradient-to-t from-transparent to-black"></div>
+      <div className="absolute z-0 inset-0 bg-gradient-to-t from-black/50 sm:from-transparent  to-black"></div>
 
         <div className=' h-full flex items-center justify-center pl-0 sm:justify-start sm:pl-40 ' data-aos = 'fade-right'>
-          <div className="w-[60%] xl:w-[50%] text-white text-center sm:text-left">
-              <h1 className=' text-[7rem] leading-tight font-extrabold'>Order <span className='text-red-600'>food</span> anywhere, anytime</h1>
-              <p className=' text-lg font-light'>Browse from our list of specials to place your order and have food 
+          <div className="w-[90%] sm:w-[60%] xl:w-[50%] text-white text-center sm:text-left">
+              <h1 className=' text-[4rem] sm:text-[7rem] leading-tight font-extrabold'>Order <span className='text-red-600'>food</span> anywhere, anytime</h1>
+              <p className=' text-lg font-light md:w-[70%]'>Browse from our list of specials to place your order and have food 
                   delivered to you in no time. Affordable, tasty and fast... </p>
-              <div className='flex gap-6 py-6'>
+              <div className='flex gap-6 py-6 justify-center sm:justify-start'>
                 <img src={play} alt="" />
                 <img src={app} alt="" />
             </div>

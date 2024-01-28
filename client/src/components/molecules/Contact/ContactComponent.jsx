@@ -30,10 +30,10 @@ const ContactComponent = () => {
           <h1 className='font-extrabold text-[5rem] text-center z-10'>CONTACT US</h1>
         </div>
       </div>
-      <div className="text-black p-20 md:p-52 text-lg w-full">
+      <div className="text-black p-10 md:p-52 text-lg w-full">
         <div className="text-center flex flex-col w-full items-center gap-10">
-            <h1 className='font-extrabold text-[4rem] leading-normal'>How can I help you?</h1>
-            <p className='text-lg w-[70%] md:w-1/2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit fuga reiciendis voluptates? Dolor, non facilis alias eos ad facere.</p>
+            <h1 className='font-extrabold text-[3rem] sm:text-[4rem] leading-normal'>How can I help you?</h1>
+            <p className='text-lg sm:w-[70%] md:w-1/2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit fuga reiciendis voluptates? Dolor, non facilis alias eos ad facere.</p>
             <div className=" flex w-full gap-7 flex-col-reverse sm:flex-row items-center justify-between">
                 <div className="col1">
                     <p className=' w-full  text-center  sm:text-left pb-6'>Lillies Food is a registered tradedmark of Nigerian Company LTD.</p>
@@ -64,23 +64,23 @@ const ContactComponent = () => {
               <form action="" method="post" className='grid grid-cols-2 gap-9 '>
                 <div>
                   <label className='font-semibold leading-loose' htmlFor="Firstname">Firstname</label><br />
-                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Firstname"  />
+                  <input type="text" name="" className='border bg-slate-400 opacity-25 w-full h-[40px]' id="Firstname"  />
                 </div>
                 <div>
                   <label className='font-semibold leading-loose' htmlFor="Lastname">Lastname</label><br />
-                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Lastname" />
+                  <input type="text" name="" className='border bg-slate-400 opacity-25 w-full h-[40px]' id="Lastname" />
                 </div>
                 <div>
                   <label className='font-semibold leading-loose' htmlFor="Subject">Subject</label><br />
-                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="Subject" />
+                  <input type="text" name="" className='border bg-slate-400 opacity-25 w-full h-[40px]' id="Subject" />
                 </div>
                 <div>
                   <label className='font-semibold leading-loose' htmlFor="InquiryType">Inquiry Type</label><br />
-                  <input type="text" name="" className='border bg-slate-200 opacity-25 w-full h-[40px]' id="InquiryType" />
+                  <input type="text" name="" className='border bg-slate-400 opacity-25 w-full h-[40px]' id="InquiryType" />
                 </div>
                 <div className='gridSpan'>
                   <label className='font-semibold leading-loose' htmlFor="">Your Message</label><br />
-                  <textarea name="" className='border w-full bg-slate-200 opacity-25'  id="" cols="" rows="10"></textarea>
+                  <textarea name="" className='border w-full bg-slate-400 opacity-25'  id="" cols="" rows="10"></textarea>
                 </div>
                 <div className='w-full'>
                   <Button text={'Send Message'}/>

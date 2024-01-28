@@ -12,7 +12,7 @@ import play from 'src/icons/img/google-play.png';
 const Footer = () => {
   return (
     <FooterWrapper>
-        <div className="footer-top space-around">
+        <div className="footer-top space-around gap-5">
             <div className="footer-links">
                 <p>Company</p>
                 <ul>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <Link to = '/'><img src={ app } alt="App Store Link" /></Link>
             </div>
         </div>
-        <div className="footer-bottom space-between">
+        <div className="footer-bottom w-full flex justify-center items-center gap-24">
             <div className="copy">
                 <span>
                     &copy; 2023 LILIES. All rights reserved

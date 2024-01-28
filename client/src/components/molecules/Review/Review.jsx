@@ -32,10 +32,10 @@ const Review = () => {
       }, [])
   return (
     <>
-        <div className=" bg-white w-full h-[100vh] py-40  px-20  lg:px-40   ">
+        <div className=" bg-white w-full  py-40  px-10  lg:px-40   ">
             <div className="text-center w-[100%] flex flex-col justify-center items-center"  data-aos = 'fade-down'>
-                <h1 className="text-red-600 font-extrabold text-[4rem]">What Customers Say</h1>
-                <p className="text-lg w-[70%] text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesciunt suscipit fugit voluptatibus ea est architecto a quam.</p>
+                <h1 className="text-red-600 font-extrabold text-[3rem] sm:text-[4rem]">What Customers Say</h1>
+                <p className="text-lg  sm:w-[70%] text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesciunt suscipit fugit voluptatibus ea est architecto a quam.</p>
             </div>
             <div className="cards mt-20" data-aos = 'fade-right'>
                 <div className=" w-full text-justify   text-black">

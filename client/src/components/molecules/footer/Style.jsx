@@ -22,7 +22,7 @@ export const FooterWrapper = styled.footer`
     .footer-bottom{
         border-top: 2px solid grey;
         color: white;
-        padding: 10px 150px;
+        
 
         .socials{
             width: 15%

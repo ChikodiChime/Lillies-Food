@@ -32,9 +32,9 @@ const AboutComponent = () => {
 
       {/* about chef */}
       <div className="">
-        <div className="w-full py-40 px-20 md:px-40 flex justify-center items-center flex-col">
-          <h1 className="text-red-600 text-center text-[4rem] font-extrabold" data-aos = 'fade-down'>Meet the Chef Behind Delicious Lilies Food</h1>
-          <div className="flex flex-col sm:flex-row gap-20 text-black text-lg leading-relaxed tracking-wider">
+        <div className="w-full py-40 px-10 md:px-40 flex justify-center items-center flex-col">
+          <h1 className="text-red-600 text-center text-[2rem] sm:text-[4rem] font-extrabold" data-aos = 'fade-down'>Meet the Chef Behind Delicious Lilies Food</h1>
+          <div className="flex flex-col sm:flex-row gap-20 text-black text-lg leading-relaxed tracking-wider text-justify ">
             <p data-aos = 'fade-right'>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime debitis animi ipsam autem unde,
                alias exercitationem ullam dolore facilis nobis. Laboriosam inventore odit, esse asperiores eius,
@@ -61,8 +61,8 @@ const AboutComponent = () => {
       <div className="bg-red-600">
         <div className="flex items-center justify-center flex-col-reverse md:flex-row">
           <div className="px-20 md:pl-40 py-40 ">
-            <h1 className='font-extrabold text-[4rem] text-center' data-aos = 'fade-down'> We aim to inspire</h1>
-            <p className='text-lg' data-aos = 'fade-right'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nemo soluta tempora, excepturi
+            <h1 className='font-extrabold text-[4rem] text-center sm:text-left' data-aos = 'fade-down'> We aim to inspire</h1>
+            <p className='text-lg text-justify sm:text-left' data-aos = 'fade-right'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nemo soluta tempora, excepturi
                unde molestias optio asperiores eos deserunt tempore eaque <br /> <br /> eius maxime quos beatae iure voluptatem
                 sed quod dignissimos quis dolores! Neque id possimus sed incidunt iure, facilis omnis distinctio
                  rem atque ea, doloremque obcaecati a quia. Iusto, dolorem.

@@ -12,7 +12,7 @@ const handleClick = () => {
 
   return (
     
-    <nav className='w-full  py-10 px-20   fixed z-50 bg-black/50 backdrop-blur-lg'>
+    <nav className='w-full  py-4 px-20   fixed z-50 bg-black/50 backdrop-blur-lg'>
         <div className="h-full w-full  text-sm flex justify-between items-center ">
             <div className=" flex w-1/2 items-center justify-start">
                 <img src={Logo} alt="" className='object-cover w-[100px]' />
