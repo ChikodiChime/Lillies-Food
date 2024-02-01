@@ -30,6 +30,7 @@ html {
 }
 :root{
   --background-color: #ffff;
+  --primary-bg: #f1efef;
   --primary-color: #000000;
   --toggle-bg: #810101;
   --toggle-fg: #b66a6a;
@@ -37,13 +38,14 @@ html {
 }
 [data-theme='dark']{
   --background-color: #000000;
+  --primary-bg: #141414;
   --primary-color: #ffff;
   --toggle-bg: #b66a6a;
   --toggle-fg: #810101;
 
 }
 .dashboard{
-  background-color: var(--background-color);
+  background-color: var(--primary-bg);
   color: var(--primary-color);
   transition: background-color .25s ease-in-out;
 
@@ -212,4 +214,23 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 300px;
     
   }
+}
+.userSideBar{
+  background-color: var(--background-color);
+}
+.side-link{
+  width: 100%;
+  padding: 20px 50px;
+  transition: all ease-in-out .5s;
+  
+}
+.side-link:hover{
+  background-color: #8f1f1f2f;
+}
+.content{
+  width: calc(100% - 300px);
+}
+.mealWrapper{
+  background-color: var(--background-color);
+  border-radius: 10px;
 }
