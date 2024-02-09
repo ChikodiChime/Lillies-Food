@@ -1,12 +1,24 @@
 
 import { FaCartPlus, FaHome, FaList } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { FaBars } from 'react-icons/fa'
 import Logo from '../../../icons/img/logo.png'
 import Button from 'src/components/atoms/Button'
 const SideBar = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+const handleClick = () => {
+  setIsOpen(!isOpen)
+}
   return (
     <>
-    <div className="userSideBar w-[300px]  h-screen flex flex-col justify-around items-center">
+    {isOpen && <div className="overlay" onClick={handleClick}></div>}
+    
+    <div className={`userSideBar ${isOpen && 'active'}  w-[300px]  h-screen relative  flex flex-col justify-around items-center`}>
+    <button onClick={handleClick} className='side-btn absolute top-32  p-5 rounded-tr-2xl rounded-br-2xl'>
+        <FaBars size={25}/>
+    </button>
         <div className="  ">
             <img src={Logo} alt="" className='object-cover w-[100px]' />
         </div>

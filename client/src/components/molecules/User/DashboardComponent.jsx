@@ -4,9 +4,10 @@ import Button from 'src/components/atoms/Button'
 import { Meals } from 'src/utilities/Meals'
 
 const DashboardComponent = () => {
+  
   return (
     <>
-        <div className="grid grid-cols-3 gap-20">
+        <div className="grid h-full py-20 sm:pr-10 overflow-y-auto grid-cols-1  min-[850px]:grid-cols-2  gap-20">
             {Meals.map((meal, index) => (
                 <div className="mealWrapper flex flex-col shadow-lg p-10 gap-6 items-center" key={index} >
                     <img className='w-[150px] [h-150px]' src={`src/icons/img/${meal.img}.png`} alt="" />
@@ -24,5 +25,7 @@ const DashboardComponent = () => {
     </>
   )
 }
+
+
 
 export default DashboardComponent
