@@ -10,7 +10,7 @@ const DashboardStructure = ({Content, UserName}) => {
         </div>
         
         <div className=" p-20 pb-40 content ">
-            <div className="pb-20">
+            <div className="pb-20 text-center md:text-left">
                 <h1 className="text-4xl ">{UserName}</h1>
                 <p className="pt-3 text-lg tracking-wide">What are you craving today? We've got it all</p>
             </div>
