@@ -206,7 +206,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   transition: all 4s ease-in-out;
 }
 .modal-content{
-  width: 50%;
+  width: 40%;
   background-color: var(--primary-bg);
   height: 100%;
   display: flex;
@@ -215,6 +215,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   justify-content: space-around;
   padding: 40px ;
 }
+
 
 
 
@@ -303,5 +304,26 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     transition: all .2s ease-in-out;
 
   }
+  .modal-content{
+    width: 60%;
+  }
  
+ 
+}
+@media only screen and (max-width: 600px) {
+  .modal-content{
+    width: 80%;
+  }
+
+}
+@media only screen and (max-width: 400px) {
+  .modal-content{
+    padding: 20px;
+  }
+  .extra-detail{
+    
+    flex-direction: column;
+    text-align: center;
+    
+  }
 }
