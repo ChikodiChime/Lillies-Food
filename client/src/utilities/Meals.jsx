@@ -1,5 +1,10 @@
+// import {v4 as uuidv4 } from 'uuid'
+
 export const Meals = [
     {
+       
+        // _id: uuidv4(),
+        id: 1,
         img: 'img1',
         name: 'Double Cheese Burger',
         summary: 'Juicy and fresh, tasty, spicy and savoury to suit all tastebuds',
@@ -9,6 +14,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 2,
         img: 'img2',
         name: 'Chicken Noodle Salad',
         summary: 'Chicken Noodle salad, with tasty chicken and fresh vegetables, containing all the nutrients you may need.',
@@ -18,6 +25,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 3,
         img: 'img3',
         name: 'Stir Fry Pasta',
         summary: 'Its Stir fry pasta with prawns, do you need any other detail? the image is salivating enough',
@@ -27,6 +36,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 4,
         img: 'img4',
         name: 'MeatBalls',
         summary: 'Darling, it is meat, in balls... what are you waiting for? you know we got you.',
@@ -36,6 +47,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 5,
         img: 'img1',
         name: 'Double Cheese Burger',
         summary: 'Juicy and fresh, tasty, spicy and savoury to suit all tastebuds',
@@ -45,6 +58,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 6,
         img: 'img2',
         name: 'Chicken Noodle Salad',
         summary: 'Chicken Noodle salad, with tasty chicken and fresh vegetables, containing all the nutrients you may need.',
@@ -54,6 +69,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 7,
         img: 'img3',
         name: 'Stir Fry Pasta',
         summary: 'Its Stir fry pasta with prawns, do you need any other detail? the image is salivating enough',
@@ -63,6 +80,8 @@ export const Meals = [
         stock: 10
     },
     {
+        // _id: uuidv4(),
+        id: 8,
         img: 'img4',
         name: 'MeatBalls',
         summary: 'Darling, it is meat, in balls... what are you waiting for? you know we got you.',
