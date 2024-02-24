@@ -25,7 +25,7 @@ const handleClick = () => {
             </div>
             
             <div className="links space-y-3 w-full ">
-                <Link className="side-link flex justify-between items-center gap-8 w-full text-xl">
+                <Link to='/Dashboard' className="side-link flex justify-between items-center gap-8 w-full text-xl">
                     <div className="flex gap-6 items-center">
                         <FaHome size={20}/>
                         <span>Dashboard</span>
@@ -33,7 +33,7 @@ const handleClick = () => {
                     
                 </Link>
 
-                <Link className="side-link flex justify-between items-center gap-8 w-full text-xl">
+                <Link to='/Orders' className="side-link flex justify-between items-center gap-8 w-full text-xl">
                     <div className="flex gap-6 items-center">
                         <FaList size={20}/>
                         <span>Orders</span>
@@ -42,7 +42,7 @@ const handleClick = () => {
                     <span className='badge flex items-center justify-center w-8 h-8 bg-red-500'>4</span>
                 </Link>
 
-                <Link className="side-link flex justify-between items-center gap-8 w-full text-xl  ">
+                <Link to='/Cart' className="side-link flex justify-between items-center gap-8 w-full text-xl  ">
                     <div className="flex gap-6 items-center">
                         <FaCartPlus size={20}/>
                         <span>Cart</span>

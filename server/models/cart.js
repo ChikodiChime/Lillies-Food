@@ -4,8 +4,8 @@ const cartSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to the user who owns the cart
     items: [{
       mealId: { type: mongoose.Schema.Types.ObjectId, ref: 'Meal', required: true },
-      name: { type: String }, // Populated from the meal schema
-      price: { type: Number }, // Populated from the meal schema
+      name: { type: String, required: true }, // Populated from the meal schema
+      price: { type: Number, required: true  }, // Populated from the meal schema
       quantity: { type: Number, required: true },
   
     }],

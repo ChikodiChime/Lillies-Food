@@ -1,24 +1,22 @@
 const Cart = require('../models/cart');
 
-// Controller function to add item to cart
+
 exports.addItemToCart = async (req, res) => {
   try {
     const { userId, mealId, name, quantity, price } = req.body;
-
-    // Check if the item already exists in the cart
     let cart = await Cart.findOne({ userId });
     if (!cart) {
       cart = new Cart({ userId, items: [] });
     }
 
-    const existingItem = cart.items.find(item => item.mealId === mealId);
-    if (existingItem) {
-      // If item already exists, update quantity
-      existingItem.quantity += quantity;
+    const existingItemIndex = cart.items.findIndex(item => item.mealId.toString() === mealId);
+
+    if (existingItemIndex !== -1) {
+      cart.items[existingItemIndex].quantity += quantity;
     } else {
-      // If item doesn't exist, add it to the cart
       cart.items.push({ mealId, name, quantity, price });
-    }
+}
+
 
     await cart.save();
     res.status(200).json(cart);
@@ -28,6 +26,16 @@ exports.addItemToCart = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+exports.getCart = async(req, res) => {
+  try{
+      const cart = await Cart.find({});
+      res.json(cart);
+
+  }catch (error){
+      console.error('Error fetching cart:', error)
+      res.status(500).json({message: 'Internal server error'})
+  }
+}
 
 
 // Controller function to update item quantity in cart

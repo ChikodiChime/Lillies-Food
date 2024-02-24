@@ -11,6 +11,8 @@ import Contact from './pages/Contact';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from '../context/userContext';
+import Cart from './pages/Cart';
+import Orders from './pages/Orders';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = true
@@ -26,6 +28,8 @@ function App() {
         <Route  path='/Login' element={<Login />} />
         <Route  path='/Signup' element={<Signup />} />
         <Route  path='/Dashboard' element={<Dashboard />} />
+        <Route  path='/Cart' element={<Cart />} />
+        <Route  path='/Orders' element={<Orders />} />
         <Route  path='/Recipes' element={<Recipes />} />
         <Route  path='/Gallery' element={<Gallery />} />
         <Route  path='/Contact' element={<Contact />} />

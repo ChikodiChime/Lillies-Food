@@ -14,6 +14,7 @@ router.use(
 
 // Route to add item to cart
 router.post('/add', cartController.addItemToCart);
+router.get('/get-cart', cartController.getCart)
 
 // Route to update item quantity in cart
 router.put('/cart/update/:userId/:mealId', cartController.updateCartItem);

@@ -11,7 +11,7 @@ const MealModal = ({ isOpen, onClose, meal }) => {
     const [cartItems, setCartItems] = useState({});
     const {user} = useContext(UserContext)
     if (!isOpen) return null;
-    const selectedMeals = meal[0];
+    // const selectedMeals = meal[0];
     const handleAdd = () => {
        setCount(count + 1)
     };
@@ -22,35 +22,35 @@ const MealModal = ({ isOpen, onClose, meal }) => {
         }
     };
 
-    // const addItemToCart = async (mealId) => {
-    //     try {
-    //         // const uniqueId = uuidv4(); // Generate unique ID
-    //         const response = await axios.post('/api/cart/add', {
-    //             userId: user.id,
-    //             mealId, // Use unique ID as meal ID
-    //             name: meal.name,
-    //             quantity: count || 0,
-    //             price: meal.price
-    //         });
-    //         // Assuming response.data.items contains updated cart items
-    //         setCartItems(response.data.items);
-    //     } catch (error) {
-    //         console.error('Error adding item to cart:', error);
-    //     }
-    // };
+    const addItemToCart = async (mealId) => {
+        try {
+           
+            const response = await axios.post('/api/cart/add', {
+                userId: user.id,
+                mealId, 
+                name: meal.name,
+                quantity: count || 0,
+                price: meal.price
+            });
+            
+            setCartItems(response.data.items);
+        } catch (error) {
+            console.error('Error adding item to cart:', error);
+        }
+    };
 
     return (
         <>
             <div className="modal-overlay ">
                 <div className="h-full w-full absolute z-0 " onClick={onClose}></div>
                 <div className="modal-content z-30 ">
-                    <img className='w-[200px] h-[200px]' src={selectedMeals.img} alt="" />
-                    <h2 className='text-2xl font-bold text-red-600'>{selectedMeals.name}</h2>
-                    <p className='text-center text-sm leading-loose font-light tracking-wide'>{selectedMeals.details}</p>
+                    <img className='w-[200px] h-[200px]' src={meal.img} alt="" />
+                    <h2 className='text-2xl font-bold text-red-600'>{meal.name}</h2>
+                    <p className='text-center text-sm leading-loose font-light tracking-wide'>{meal.details}</p>
                     <div className="extra-detail flex gap-10 justify-between w-full text-lg text-red-600 font-medium">
-                        <p>NGN {selectedMeals.price}.00</p>
-                        <p>{selectedMeals.prepTime} Mins</p>
-                        <p>{selectedMeals.stock} Plates Avail</p>
+                        <p>NGN {meal.price}.00</p>
+                        <p>{meal.prepTime} Mins</p>
+                        <p>{meal.stock} Plates Avail</p>
                     </div>
                     <div className="flex justify-between w-full gap-5 items-center  flex-col sm:flex-row">
                         <div className=" flex items-center gap-5">
@@ -59,7 +59,7 @@ const MealModal = ({ isOpen, onClose, meal }) => {
                             <button onClick={() => handleMinus()} className=' bg-red-400 hover:bg-red-600 w-12 h-12 flex items-center justify-center'><FaMinus /></button>
                         </div>
 
-                        <Button text={'Add to Cart'} onClick={() => addItemToCart(selectedMeals._id)} />
+                        <Button text={'Add to Cart'} onClick={() => addItemToCart(meal._id)} />
                     </div>
 
                     <button onClick={onClose} className='absolute top-5 left-5 text-red-600'><FaTimes size={30} /></button>
