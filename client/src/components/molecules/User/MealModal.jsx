@@ -3,10 +3,11 @@ import axios from 'axios';
 import { FaMinus, FaPlus, FaTimes } from 'react-icons/fa';
 import Button from 'src/components/atoms/Button';
 import { UserContext } from '../../../../context/userContext';
-// import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import {toast} from 'react-hot-toast'
 
-const MealModal = ({ isOpen, onClose, meal }) => {
-    // const [mealCounts, setMealCounts] = useState({ [meal._id]: 1 });
+
+
+const MealModal = ({ isOpen, onClose, meal }) => {;
     const [count, setCount] = useState(1)
     const [cartItems, setCartItems] = useState({});
     const {user} = useContext(UserContext)
@@ -28,12 +29,18 @@ const MealModal = ({ isOpen, onClose, meal }) => {
             const response = await axios.post('/api/cart/add', {
                 userId: user.id,
                 mealId, 
+                // img: meal.img,
                 name: meal.name,
                 quantity: count || 0,
+                summary: meal.summary,
+                stock: meal.stock,
                 price: meal.price
             });
             
             setCartItems(response.data.items);
+            console.log(response.data.items);
+            toast.success('Item added to cart');
+
         } catch (error) {
             console.error('Error adding item to cart:', error);
         }

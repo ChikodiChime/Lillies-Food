@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import Logo from '../../../icons/img/logo.png'
 import Button from 'src/components/atoms/Button'
-const SideBar = () => {
+const SideBar = ({totalItemsInCart}) => {
     const [isOpen, setIsOpen] = useState(false)
 
 const handleClick = () => {
@@ -15,7 +15,7 @@ const handleClick = () => {
     <>
     {isOpen && <div className="overlay" onClick={handleClick}></div>}
     
-    <div className={`userSideBar ${isOpen && 'active'} w-[300px]  h-screen relative `}>
+    <div className={`userSideBar ${isOpen && 'active'} w-[300px]  h-screen relative z-10 `}>
         <button onClick={handleClick} className='side-btn absolute top-32  p-5 rounded-tr-2xl rounded-br-2xl'>
             <FaBars size={25}/>
         </button>
@@ -48,7 +48,7 @@ const handleClick = () => {
                         <span>Cart</span>
                     </div>
                     
-                    <span className='badge flex items-center justify-center w-8 h-8 bg-green-800'>4</span>
+                    <span className='badge flex items-center justify-center w-8 h-8 bg-green-800'>{totalItemsInCart}</span>
 
                 </Link>
 

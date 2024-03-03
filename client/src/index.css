@@ -215,6 +215,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .userSideBar{
   background-color: var(--background-color);
+  
 }
 .side-link{
   width: 100%;
@@ -254,7 +255,14 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   padding: 40px ;
 }
 
-
+.grand-total{
+  background-color: var(--primary-bg);
+  position: sticky;
+  bottom: 10px;
+  left: 0;
+  z-index: 0;
+  box-shadow: -1px 2px 20px -6px rgba(0,0,0,0.38)
+}
 
 
 

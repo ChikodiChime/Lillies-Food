@@ -16,7 +16,7 @@ const DashboardComponent = () => {
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching meals:', error);
-        setError('Error fetching meals. Please try again later.');
+        setError('Error fetching meals. Please try again later');
         setIsLoading(false);
       }
     };

@@ -18,7 +18,7 @@ const Dashboard = () => {
         
         
        
-        <DashboardStructure Content={<DashboardComponent/>} UserName={ !!user && (<p>Good Day, <span className="text-red-600 font-extrabold ">{user.name}</span>  </p>) } />
+        <DashboardStructure Content={<DashboardComponent/>} UserName={ !!user && (<p>Good Day, <span className="text-red-600 font-extrabold ">{user.name}</span>  </p>) } text="What are you craving today? We've got it all" />
     </div>
   )
 }
