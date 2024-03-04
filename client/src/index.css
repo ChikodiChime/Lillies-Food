@@ -256,7 +256,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .grand-total{
-  background-color: var(--primary-bg);
+  /* background-color: var(--primary-bg); */
   position: sticky;
   bottom: 10px;
   left: 0;

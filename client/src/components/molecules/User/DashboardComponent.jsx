@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MealModal from './MealModal';
+import Checkout from './Checkout';
 
 const DashboardComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -37,6 +38,7 @@ const DashboardComponent = () => {
 
   return (
     <>
+    <Checkout/>
       {isLoading ? (
         <div className="flex h-full justify-center items-center">
           <span className="loader"></span>

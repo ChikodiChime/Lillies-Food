@@ -4,12 +4,14 @@ import {toast} from 'react-hot-toast'
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Button from 'src/components/atoms/Button';
+import Checkout from './Checkout';
 
 const CartComponent = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [grandTotal, setGrandTotal] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
   // Fetch cart items
   useEffect(() => {
@@ -70,7 +72,14 @@ const subTotal = (item) => {
   
   return item.price * item.quantity
 }
+const openModal = () => {
+  setModalIsOpen(true);
+};
 
+const closeModal = () => {
+  setModalIsOpen(false);
+  
+};
 
 return (
   <>
@@ -85,7 +94,7 @@ return (
   ) : (
     <div className="overflow-y-auto h-full  ">
       {cartItems.map((cartItem) => (
-        <div className='flex flex-col  py-20  sm:pr-10  gap-10'  key={cartItem._id}>
+        <div className='flex flex-col justify-center items-center  py-20  sm:pr-10  gap-10'  key={cartItem._id}>
           {cartItem.items.length === 0 ? (
             <p className='w-full text-center text-xl'>Cart is Empty <br /> <Link to={'/Dashboard'} className='text-red-600 cursor-pointer underline'>Discover some mouth-watering meals</Link></p>
           ) : (
@@ -110,17 +119,17 @@ return (
               </div>
             ))
           )}
-          <div className="grand-total px-10 sm:px-20 py-10 w-full flex flex-col justify-center items-center  gap-10">
+          <div className="grand-total bg-red-600 rounded-md px-10 md:px-5 sm:px-20 py-5 w-full md:w-3/4 flex flex-col justify-center items-center  gap-10">
         
-            <div className=" font-bold text-2xl sm:text-3xl flex justify-between w-full items-center">
-              <h2 className=" text-red-600">Cart Summary:</h2>
+            <div className=" font-bold  text-white text-2xl sm:text-3xl flex justify-between w-full items-center">
+              <h2 className=" ">Cart Summary:</h2>
               <p className=''>N {grandTotal}.00</p>
             </div>
-            <Button text={`Check Out (N ${grandTotal})`} />
-          </div>
+            <button onClick={openModal} className='bg-white rounded-md px-20 py-5 font-bold text-xl text-black hover:bg-white/90' >Check Out (N {grandTotal})</button>
+          </div> 
         </div>
       ))}
-      
+      <Checkout isOpen={modalIsOpen} onClose={closeModal} />
     </div>
   )}
   
