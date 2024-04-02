@@ -4,15 +4,20 @@ import { FaMinus, FaPlus, FaTimes } from 'react-icons/fa';
 import Button from 'src/components/atoms/Button';
 import { UserContext } from '../../../../context/userContext';
 import {toast} from 'react-hot-toast'
-
+import {useDispatch, useSelector} from 'react-redux'
+import { addItemToCart } from 'src/store/cartSlice';
 
 
 const MealModal = ({ isOpen, onClose, meal }) => {;
+
+    const dispatch = useDispatch()
+    // const product = useSelector(state => state.cart)
     const [count, setCount] = useState(1)
     const [cartItems, setCartItems] = useState({});
+    const [ordered, setOrdered] = useState(false)
     const {user} = useContext(UserContext)
     if (!isOpen) return null;
-    // const selectedMeals = meal[0];
+   
     const handleAdd = () => {
        setCount(count + 1)
     };
@@ -22,22 +27,41 @@ const MealModal = ({ isOpen, onClose, meal }) => {;
            setCount(count - 1)
         }
     };
+   
 
-    const addItemToCart = async (mealId) => {
+
+    const addToCartHandler = async () => {
+    
         try {
            
             const response = await axios.post('/api/cart/add', {
                 userId: user.id,
-                mealId, 
+                mealId: meal._id, 
                 // img: meal.img,
                 name: meal.name,
                 quantity: count || 0,
                 summary: meal.summary,
                 stock: meal.stock,
-                price: meal.price
+                price: meal.price, 
+                details: meal.details, 
+                prepTime: meal.prepTime, 
+       
+
             });
-            
-            setCartItems(response.data.items);
+            if (response.status = 201){
+                dispatch(addItemToCart({
+                    userId: user.id,
+                mealId: meal._id, 
+                // img: meal.img,
+                name: meal.name,
+                quantity: count || 0,
+                summary: meal.summary,
+                stock: meal.stock,
+                price: meal.price, 
+                details: meal.details, 
+                prepTime: meal.prepTime, 
+                }))
+            }
             console.log(response.data.items);
             toast.success('Item added to cart');
 
@@ -66,7 +90,7 @@ const MealModal = ({ isOpen, onClose, meal }) => {;
                             <button onClick={() => handleMinus()} className=' bg-red-400 hover:bg-red-600 w-12 h-12 flex items-center justify-center'><FaMinus /></button>
                         </div>
 
-                        <Button text={'Add to Cart'} onClick={() => addItemToCart(meal._id)} />
+                        <Button text={'Add to Cart'} onClick={addToCartHandler} />
                     </div>
 
                     <button onClick={onClose} className='absolute top-5 left-5 text-red-600'><FaTimes size={30} /></button>

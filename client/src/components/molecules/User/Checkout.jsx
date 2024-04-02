@@ -1,42 +1,54 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import Button from 'src/components/atoms/Button'
 import { FaTimes } from 'react-icons/fa';
-const Checkout = ({isOpen, onClose}) => {
+const Checkout = ({isOpen, onClose, cartItems, setCartItems}) => {
 
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
-    if (!isOpen) return null
-    // Function to format card number
-    const formatCardNumber = (input) => {
-      // Remove non-numeric characters from input
-        const cleanedInput = input.replace(/[^\d]/g, '');
+    // const [mealsInOrder, setMealsInOrder] = useState([])
 
-      // Add hyphen after every four digits
-        const formattedInput = cleanedInput.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1-');
-
-      // Limit input to 19 characters (format: XXXX-XXXX-XXXX-XXXX)
-        return formattedInput.slice(0, 19);
+    const makePayment = async () => {
+        // Update the 'ordered' status of meal items to true in the frontend
+        const updatedCartItems = cartItems.map((cartItem) => ({
+            ...cartItem,
+            items: cartItem.items.map((item) => ({
+                ...item,
+                ordered: true
+            }))
+        }));
+        setCartItems(updatedCartItems);
+    
+        // Send a request to your backend API to update the 'ordered' status in the database
+        try {
+            await axios.post(`/api/cart/update`, { cartItems: updatedCartItems });
+            onClose();
+        } catch (error) {
+            console.error('Error updating cart items:', error);
+        }
     };
     
-    // Function to format expiry date
-    const formatExpiryDate = (input) => {
-      // Remove non-numeric characters from input
+
+    if (!isOpen) return null
+    
+    const formatCardNumber = (input) => {
         const cleanedInput = input.replace(/[^\d]/g, '');
-        
-      // Add forward slash after first two numbers
+        const formattedInput = cleanedInput.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1-');
+         return formattedInput.slice(0, 19);
+    };
+    
+    
+    const formatExpiryDate = (input) => {
+        const cleanedInput = input.replace(/[^\d]/g, '');
         const formattedInput = cleanedInput.replace(/^(.{2})/, '$1/');
-        
-      // Limit input to 5 characters (MM/YY)
         return formattedInput.slice(0, 5);
     };
     
-    // Event handler for card number input change
     const handleCardNumberChange = (e) => {
         const { value } = e.target;
         setCardNumber(formatCardNumber(value));
     };
     
-    // Event handler for expiry date input change
     const handleExpiryDateChange = (e) => {
         const { value } = e.target;
         setExpiryDate(formatExpiryDate(value));
@@ -94,7 +106,7 @@ const Checkout = ({isOpen, onClose}) => {
                         </div>
                         
                     </form>
-                    <Button text={'Make Payment'} onClick={onClose} />
+                    <Button text={'Make Payment'} onClick={makePayment} />
 
                     <button onClick={onClose} className='absolute top-5 left-5 text-red-600'><FaTimes size={30} /></button>
 

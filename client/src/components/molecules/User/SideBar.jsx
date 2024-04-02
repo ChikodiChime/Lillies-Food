@@ -5,7 +5,10 @@ import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import Logo from '../../../icons/img/logo.png'
 import Button from 'src/components/atoms/Button'
-const SideBar = ({totalItemsInCart}) => {
+import {useSelector} from 'react-redux'
+const SideBar = () => {
+    const quantity = useSelector(state => state.cart.quantity)
+    console.log(quantity)
     const [isOpen, setIsOpen] = useState(false)
 
 const handleClick = () => {
@@ -48,7 +51,7 @@ const handleClick = () => {
                         <span>Cart</span>
                     </div>
                     
-                    <span className='badge flex items-center justify-center w-8 h-8 bg-green-800'>{totalItemsInCart}</span>
+                    <span className='badge flex items-center justify-center w-8 h-8 bg-green-800'>{quantity}</span>
 
                 </Link>
 

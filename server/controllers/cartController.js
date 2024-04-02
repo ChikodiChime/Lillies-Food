@@ -3,19 +3,21 @@ const Cart = require('../models/cart');
 
 exports.addItemToCart = async (req, res) => {
   try {
-    const { userId, mealId, name, quantity, summary, stock, price } = req.body;
+    const { userId, mealId, name, price, summary,quantity, details, prepTime, stock } = req.body;
     let cart = await Cart.findOne({ userId });
     if (!cart) {
       cart = new Cart({ userId, items: [] });
     }
+// console.log(cart.items)
+  const existingItemIndex = cart.items.findIndex(item => item.mealId.toString() === mealId);
+  if (existingItemIndex !== -1) {
+    // If item already exists in cart, update its quantity
+    cart.items[existingItemIndex].quantity += quantity;
+    console.log(cart.items[existingItemIndex].quantity)
+  } else {
+    cart.items.push({ mealId, name, price, summary, quantity, details, prepTime, stock });
+  }
 
-    const existingItemIndex = cart.items.findIndex(item => item.mealId.toString() === mealId);
-
-    if (existingItemIndex !== -1) {
-      cart.items[existingItemIndex].quantity += quantity;
-    } else {
-      cart.items.push({ mealId, name, quantity, summary, stock, price });
-}
 
 
     await cart.save();
@@ -41,7 +43,7 @@ exports.getCart = async(req, res) => {
 // Controller function to update item quantity in cart
 exports.updateCartItem = async (req, res) => {
   try {
-    const { userId, mealId, quantity } = req.body;
+    const { cartItems } = req.body;
 
     const cart = await Cart.findOne({ userId });
     if (!cart) {
@@ -53,7 +55,7 @@ exports.updateCartItem = async (req, res) => {
       return res.status(404).json({ message: 'Item not found in cart' });
     }
 
-    item.quantity = quantity;
+
 
     await cart.save();
     res.status(200).json(cart);
@@ -75,7 +77,8 @@ exports.removeItemFromCart = async (req, res) => {
     }
     
     const cartItemIndex = cart.items.findIndex(item => {
-      return item._id.toString() === mealId;
+      console.log(item.mealId.toString(), mealId)
+      return item.mealId.toString() === mealId;
     });
     if (cartItemIndex === -1) {
       return res.status(404).json({ message: 'Item not found in cart' });
