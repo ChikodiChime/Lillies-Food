@@ -2,6 +2,7 @@ export const Reviews = [
     {
         Review: [
             {
+                id: 1,
                 img: 'profile',
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
@@ -18,6 +19,7 @@ export const Reviews = [
                 rating: '4.9'
             },
             {
+                id: 2,
                 img: 'profile',
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
@@ -26,6 +28,7 @@ export const Reviews = [
                 rating: '4.9'
             },
             {
+                id: 3,
                 img: 'profile',
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
@@ -34,6 +37,7 @@ export const Reviews = [
                 rating: '4.9'
             },
             {
+                id: 4,
                 img: 'profile',
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',

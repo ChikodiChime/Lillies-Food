@@ -7,32 +7,32 @@ import Checkout from './Checkout';
 import {useSelector, useDispatch } from 'react-redux'
 import { removeItemFromCart } from 'src/store/cartSlice';
 
+export const removeCartItem = async (userId, mealId) => {
+  try {
+      await axios.delete(`/api/cart/remove/${userId}/${mealId}`);
+      
+  
+  } catch (error) {
+      console.error('Error removing cart item', error);
+  }
+};
+
 const CartComponent = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [grandTotal, setGrandTotal] = useState(null);
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const cartProducts = useSelector(state => state.cart)
   const dispatch = useDispatch()
 // console.log(cartProducts.data)
 
-  const removeCartItem = async (userId, mealId) => {
-    try {
-        await axios.delete(`/api/cart/remove/${userId}/${mealId}`);
-        
-    
-        toast.success('Item deleted from cart');
-    } catch (error) {
-        console.error('Error removing cart item', error);
-    }
-};
+
 
 
 // Function to handle remove button click
 const handleRemoveItemClick = (userId, mealId) => {
     removeCartItem(userId, mealId);
     dispatch(removeItemFromCart({mealId}))
+    toast.success('Item deleted from cart');
+
 };
 
 
@@ -88,7 +88,7 @@ return (
             <button onClick={openModal} className='bg-white rounded-md px-20 py-5 font-bold text-xl text-black hover:bg-white/90' >Check Out (N {cartProducts.total})</button>
           </div> 
       </div>
-      <Checkout isOpen={modalIsOpen} onClose={closeModal} cartItems={cartItems}  />
+      <Checkout isOpen={modalIsOpen} onClose={closeModal}   />
 
     </div>
           

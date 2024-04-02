@@ -2,32 +2,30 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Button from 'src/components/atoms/Button'
 import { FaTimes } from 'react-icons/fa';
-const Checkout = ({isOpen, onClose, cartItems, setCartItems}) => {
+import {useDispatch, useSelector} from 'react-redux';
+import { moveToOrders, clearCart } from 'src/store/cartSlice';
+import {toast} from 'react-hot-toast'
+import { removeCartItem } from './CartComponent';
+
+const Checkout = ({isOpen, onClose}) => {
 
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     // const [mealsInOrder, setMealsInOrder] = useState([])
-
-    const makePayment = async () => {
-        // Update the 'ordered' status of meal items to true in the frontend
-        const updatedCartItems = cartItems.map((cartItem) => ({
-            ...cartItem,
-            items: cartItem.items.map((item) => ({
-                ...item,
-                ordered: true
-            }))
-        }));
-        setCartItems(updatedCartItems);
-    
-        // Send a request to your backend API to update the 'ordered' status in the database
-        try {
-            await axios.post(`/api/cart/update`, { cartItems: updatedCartItems });
-            onClose();
-        } catch (error) {
-            console.error('Error updating cart items:', error);
-        }
-    };
-    
+    const cartItems = useSelector(state => state.cart.data)
+    const dispatch = useDispatch()
+    const handlePayment = () => {
+        dispatch(moveToOrders())
+        dispatch(clearCart())
+        cartItems.map(item => {
+            removeCartItem(item.userId, item.mealId)
+        })
+            
+            
+            toast.success('Payment made successfully')
+        
+        
+    }
 
     if (!isOpen) return null
     
@@ -106,7 +104,7 @@ const Checkout = ({isOpen, onClose, cartItems, setCartItems}) => {
                         </div>
                         
                     </form>
-                    <Button text={'Make Payment'} onClick={makePayment} />
+                    <Button text={'Make Payment'} onClick={handlePayment} />
 
                     <button onClick={onClose} className='absolute top-5 left-5 text-red-600'><FaTimes size={30} /></button>
 

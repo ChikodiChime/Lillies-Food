@@ -1,12 +1,15 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import axios from  'axios'
+
 
 
 
 const initialState = {
     data: JSON.parse(localStorage.getItem('cartItems')) || [],
     quantity: JSON.parse(localStorage.getItem('cartQuantity')) || 0,
-    total: JSON.parse(localStorage.getItem('cartTotal')) || 0
+    total: JSON.parse(localStorage.getItem('cartTotal')) || 0,
+    orders: JSON.parse(localStorage.getItem('orders')) || [],
+    ordersQuantity: JSON.parse(localStorage.getItem('ordersQuantity')) || 0,
+
 
     
 }
@@ -19,7 +22,6 @@ const cartSlice = createSlice({
         addItemToCart: (state, action) => {
             // Check if the item is already in the cart
             const existingItem = state.data.find(item => {
-                console.log(item.mealId, action.payload.mealId)
                return item.mealId === action.payload.mealId});
             
 
@@ -56,10 +58,38 @@ const cartSlice = createSlice({
             localStorage.setItem('cartItems', JSON.stringify(state.data));
             localStorage.setItem('cartQuantity', JSON.stringify(state.quantity));
             localStorage.setItem('cartTotal', JSON.stringify(state.total));
-        }
+        },
+        moveToOrders: (state) => {
+            state.orders = state.orders.concat(state.data)
+            console.log(state.orders)
+            state.ordersQuantity += state.quantity
+            localStorage.removeItem('orders')
+            localStorage.setItem('orders', JSON.stringify(state.orders));
+            localStorage.setItem('ordersQuantity', JSON.stringify(state.ordersQuantity));
+        },
+        clearCart: state => {
+            state.data = []
+            state.quantity = 0
+            state.total = 0
+            localStorage.setItem('cartItems', JSON.stringify(state.data));
+            localStorage.setItem('cartQuantity', JSON.stringify(state.quantity));
+            localStorage.setItem('cartTotal', JSON.stringify(state.total));
+        },
+        removeItemFromOrder: (state, action) => {
+            const indexToRemove = state.orders.findIndex(item => item.mealId === action.payload.mealId);
+            
+            if (indexToRemove !== -1) {
+                state.ordersQuantity -= 1;
+                state.orders.splice(indexToRemove, 1); // Remove item from array
+            }
+
+            // Store updated cart state in local storage
+            localStorage.setItem('orders', JSON.stringify(state.orders));
+            localStorage.setItem('ordersQuantity', JSON.stringify(state.ordersQuantity));
+        },
     }
 });
 
-export const {addItemToCart, removeItemFromCart} = cartSlice.actions
+export const {addItemToCart, removeItemFromCart, moveToOrders, clearCart, removeItemFromOrder} = cartSlice.actions
 export default cartSlice.reducer
 

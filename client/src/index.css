@@ -56,6 +56,7 @@ html {
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
 }
+
 @keyframes mulShdSpin {
   0%,
   100% {
@@ -355,6 +356,24 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   }
  
  
+}
+@media only screen and (min-width: 749px) and (max-width: 850px) {
+ .orderWrapper{
+  flex-direction: column !important;
+ }
+ .titleWrapper{
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+ }
+ .detailWrapper{
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+ }
+ .detailWrapper > div{
+  justify-content: space-between !important;
+ }
 }
 @media only screen and (max-width: 600px) {
   .modal-content{

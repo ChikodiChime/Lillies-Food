@@ -50,8 +50,8 @@ const Review = () => {
                     breakpoints={breakpoints}
                     >
                     {Reviews.map((ReviewData) => (
-                    ReviewData.Review?.map((review, reviewIndex) => (
-                        <div className="" key={reviewIndex}>
+                    ReviewData.Review?.map((review) => (
+                        <div className="" key={review.id}>
                         <SwiperSlide className="">
                             <div className=' shadow-lg p-10  mb-20 cursor-pointer rounded-lg  ' >
                                 <div className="flex gap-3 items-center ">

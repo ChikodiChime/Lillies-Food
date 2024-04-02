@@ -1,18 +1,26 @@
 
 import { FaCartPlus, FaHome, FaList } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import Logo from '../../../icons/img/logo.png'
 import Button from 'src/components/atoms/Button'
 import {useSelector} from 'react-redux'
+import { UserContext } from '../../../../context/userContext'
+
 const SideBar = () => {
-    const quantity = useSelector(state => state.cart.quantity)
-    console.log(quantity)
+    const quantity = useSelector(state => state.cart)
+    const {user, signOut} = useContext(UserContext)
     const [isOpen, setIsOpen] = useState(false)
+    const navigate = useNavigate()
 
 const handleClick = () => {
   setIsOpen(!isOpen)
+}
+const handleSignOut = (e) => {
+    e.preventDefault()
+    navigate('/Login')
+    signOut()
 }
   return (
     <>
@@ -42,7 +50,7 @@ const handleClick = () => {
                         <span>Orders</span>
                     </div>
                     
-                    <span className='badge flex items-center justify-center w-8 h-8 bg-red-500'>4</span>
+                    <span className='badge flex items-center text-white justify-center w-8 h-8 bg-red-500'>{quantity.ordersQuantity}</span>
                 </Link>
 
                 <Link to='/Cart' className="side-link flex justify-between items-center gap-8 w-full text-xl  ">
@@ -51,13 +59,14 @@ const handleClick = () => {
                         <span>Cart</span>
                     </div>
                     
-                    <span className='badge flex items-center justify-center w-8 h-8 bg-green-800'>{quantity}</span>
+                    <span className='badge flex items-center text-white justify-center w-8 h-8 bg-green-800'>{quantity.quantity}</span>
 
                 </Link>
 
             </div>
             <div className="signout">
-                <Button text={'Sign Out'}/>
+                {user && <Button text={'Sign Out'} onClick={handleSignOut}/>}
+                
             </div>
         </div>
         

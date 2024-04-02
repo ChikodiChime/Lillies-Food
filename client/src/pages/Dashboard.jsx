@@ -14,6 +14,7 @@ const Dashboard = () => {
       <Toggle
       isChecked={isDark}
       handleChange={() => setIsDark(!isDark) }
+      
       />
         
         

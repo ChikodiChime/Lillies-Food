@@ -1,6 +1,4 @@
 import SideBar from "../molecules/User/SideBar"
-import { useEffect, useState } from "react";
-import axios from 'axios'
 const DashboardStructure = ({Content, UserName, text}) => {
 
  

@@ -10,7 +10,7 @@ const Toggle = ({handleChange, isChecked}) => {
           onChange={handleChange}
           checked={isChecked} 
         />
-        <label htmlFor="check" className="togLabel flex cursor-pointer items-center text-2xl">Darkmode</label>
+        <label htmlFor="check" className="togLabel flex cursor-pointer items-center text-2xl"></label>
     </div>
   )
 }
