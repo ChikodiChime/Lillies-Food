@@ -21,7 +21,7 @@ const Meals = () => {
             <div className=' w-[55%] sm:w-[45%]  ' key={mealIndex}>
               {/* Assuming 'img' is the name of the image file without extension */}
               <img
-                src={`src/icons/img/${meal.img}.png`}  // Use template literals for dynamic import paths
+                src={meal.img}  // Use template literals for dynamic import paths
                 alt={meal.name}
                 className=' border-4 border-red-600 p-5 rounded-full '
               />

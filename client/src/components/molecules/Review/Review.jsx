@@ -56,7 +56,7 @@ const Review = () => {
                             <div className=' shadow-lg p-10  mb-20 cursor-pointer rounded-lg  ' >
                                 <div className="flex gap-3 items-center ">
                                     <img
-                                        src={`src/icons/img/${review.img}.jpeg`}  // Use template literals for dynamic import paths
+                                        src={review.img} // Use template literals for dynamic import paths
                                         alt={review.name}
                                         className=' border-4 rounded-[100%] object-cover w-[50px] h-[50px] '
                                     />
@@ -69,7 +69,7 @@ const Review = () => {
                                 <p className='text-lg font-light text-black'>{review.details}</p>
                                 <div className="flex items-end gap-4">
                                     <img
-                                        src={`src/icons/img/${review.stars}.png`}  // Use template literals for dynamic import paths
+                                        src={review.stars}  // Use template literals for dynamic import paths
                                         alt={review.name}
                                         className=' w-[100px] h-[20px] object-cover '
                                     />

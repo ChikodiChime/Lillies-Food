@@ -1,48 +1,51 @@
+import profile from '../icons/img/profile.jpeg'
+import stars from '../icons/img/stars.png'
+
 export const Reviews = [
     {
         Review: [
             {
                 id: 1,
-                img: 'profile',
+                img: profile,
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
                 details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesc.',
-                stars: 'stars',
+                stars: stars,
                 rating: '4.9'
             },
             {
-                img: 'profile',
+                img: profile,
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
                 details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesc.',
-                stars: 'stars',
+                stars: stars,
                 rating: '4.9'
             },
             {
                 id: 2,
-                img: 'profile',
+                img: profile,
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
                 details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesc.',
-                stars: 'stars',
+                stars: stars,
                 rating: '4.9'
             },
             {
                 id: 3,
-                img: 'profile',
+                img: profile,
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
                 details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesc.',
-                stars: 'stars',
+                stars: stars,
                 rating: '4.9'
             },
             {
                 id: 4,
-                img: 'profile',
+                img: profile,
                 name: 'Morewa Adekunle',
                 subTitle: 'Happy Customer',
                 details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio iste unde praesentium ut nulla facilis dolores quidem, quaerat quae dolore nesc.',
-                stars: 'stars',
+                stars: stars,
                 rating: '4.9'
             },
             
