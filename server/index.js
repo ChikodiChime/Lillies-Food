@@ -11,7 +11,19 @@ mongoose.connect(process.env.MONGO_URL)
 .then(() =>console.log('Database Connected'))
 .catch((err) => console.log('Database not connected ', err))
 
+const allowedOrigins = ['https://lillies-food-to43.vercel.app'];
 
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 app.use(cookieParser());
 // Middleware for parsing JSON bodies
 app.use(express.json({ limit: '10mb' }));
