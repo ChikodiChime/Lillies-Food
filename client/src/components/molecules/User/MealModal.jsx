@@ -34,7 +34,7 @@ const MealModal = ({ isOpen, onClose, meal }) => {;
     
         try {
            
-            const response = await axios.post('https://lillies-food-psi.vercel.app/api/cart/add', {
+            const response = await axios.post('/api/cart/add', {
                 userId: user.id,
                 mealId: meal._id, 
                 // img: meal.img,

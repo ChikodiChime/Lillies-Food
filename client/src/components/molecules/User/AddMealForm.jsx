@@ -35,7 +35,7 @@ const addMeal = async(e) => {
 
     try {
         // Send the meal data including the base64 image string to the backend
-        const response = await axios.post('https://lillies-food-psi.vercel.app/api/meal/add', data);
+        const response = await axios.post('/api/meal/add', data);
         if (response.data.error) {
           toast.error(response.data.error);
         } else {

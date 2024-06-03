@@ -25,7 +25,7 @@ const loginUser = async(e) => {
   e.preventDefault()
   const {email, password} = data
   try {
-    const {data} = await axios.post('https://lillies-food-psi.vercel.app/login', {
+    const {data} = await axios.post('/login', {
       email,
       password
     });

@@ -14,7 +14,7 @@ import { UserContextProvider } from '../context/userContext';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://lillies-food-psi.vercel.app';
 axios.defaults.withCredentials = true
 
 function App() {
