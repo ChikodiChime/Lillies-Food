@@ -9,7 +9,7 @@ import { removeItemFromCart } from 'src/store/cartSlice';
 
 export const removeCartItem = async (userId, mealId) => {
   try {
-      await axios.delete(`/api/cart/remove/${userId}/${mealId}`);
+      await axios.delete(`https://lillies-food-psi.vercel.app/api/cart/remove/${userId}/${mealId}`);
       
   
   } catch (error) {

@@ -9,7 +9,7 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
-      axios.get('/profile')
+      axios.get('https://lillies-food-psi.vercel.app/profile')
         .then(({ data }) => {
           setUser(data);
         })

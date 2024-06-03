@@ -27,7 +27,7 @@ const registerUser = async(e) => {
   e.preventDefault();
   const {name, email, password} = data
   try {
-    const {data} = await axios.post('/register', {
+    const {data} = await axios.post('https://lillies-food-psi.vercel.app/register', {
       name, email, password
     })
     if (data.error){
