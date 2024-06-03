@@ -12,24 +12,12 @@ mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Database Connected'))
   .catch((err) => console.log('Database not connected', err));
 
-const allowedOrigins = ['https://lillies-food-to43.vercel.app'];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, // Enable credentials (cookies, authorization headers, TLS client certificates)
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow these methods
-  allowedHeaders: 'Content-Type,Authorization', // Allow these headers
-  preflightContinue: false,
-  optionsSuccessStatus: 204 // Respond with status 204 for OPTIONS requests
-};
-
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: "https://lillies-food-to43.vercel.app"
+}
+))
+app.options('*', cors())
 app.use(cookieParser());
 
 // Middleware for parsing JSON bodies
